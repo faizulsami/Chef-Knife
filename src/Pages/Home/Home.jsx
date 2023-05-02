@@ -8,6 +8,8 @@ import pic3 from '../../images/pic3.jpg'
 import pic4 from '../../images/pic4.jpg'
 import pic5 from '../../images/pic5.jpg'
 import pic6 from '../../images/pic6.jpg'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -48,6 +50,22 @@ const Home = () => {
                     <img src={pic5} className='rounded lg:rounded-none'/>
                     <img src={pic6} className='rounded lg:rounded-none'/>
                 </div>
+                <Swiper
+                    spaceBetween={50}
+                    slidesPerView={3}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    >
+                    <SwiperSlide>Slide 1</SwiperSlide>
+                    <SwiperSlide>Slide 2</SwiperSlide>
+                    <SwiperSlide>Slide 3</SwiperSlide>
+                    <SwiperSlide>Slide 4</SwiperSlide>
+                    ...
+                </Swiper>
+            </div>
+            <div className='text-center mt-3 lg:my-12'>
+                    <h1 className='font-abc text-slate-800 text-2xl lg:text-5xl'>REVIEW ABOUT US</h1>
+                    <hr className='lg:w-64 w-28 mx-auto mt-1 lg:mt-4 border-2 lg:border-4 border-amber-400 rounded'/>
             </div>
         </div>
     );
