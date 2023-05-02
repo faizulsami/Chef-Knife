@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      abc: ["Roboto Slab", "serif"]
+    }
   },
   plugins: [
     require('flowbite/plugin')

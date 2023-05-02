@@ -10,6 +10,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
+                loader:() => fetch('https://assignment-10-server-faizulsami.vercel.app/dishes')
             }
         ]
     }
