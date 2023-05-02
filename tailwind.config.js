@@ -12,7 +12,7 @@ export default {
     }
   },
   plugins: [
-    require('flowbite/plugin')
+    [require('daisyui')],require('flowbite/plugin')
 ],
 }
 

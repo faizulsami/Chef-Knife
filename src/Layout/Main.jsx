@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../Pages/Shared/Header';
 import { Outlet } from 'react-router-dom';
-import Footer from '../Pages/Shared/Footer';
+import Footer_1 from '../Pages/Shared/Footer';
 
 const Main = () => {
     return (
         <div>
             <Header></Header>
             <Outlet></Outlet>
-            <Footer></Footer>
+            <Footer_1></Footer_1>
         </div>
     );
 };
