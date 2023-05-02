@@ -4,7 +4,7 @@ import webLogo from '../../images/webLogo.png'
 
 const Footer_1 = () => {
     return (
-        <Footer container={true} className='container mx-auto'>
+        <Footer container={true} className='container mx-auto mt-2 lg:mt-20'>
             <div className="w-full text-center font-abc">
                 <div className="w-full justify-between flex items-center">
                     <img src={webLogo} className='lg:w-36 w-20'/>

@@ -8,8 +8,7 @@ import pic3 from '../../images/pic3.jpg'
 import pic4 from '../../images/pic4.jpg'
 import pic5 from '../../images/pic5.jpg'
 import pic6 from '../../images/pic6.jpg'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Carousel } from 'flowbite-react';
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -50,23 +49,51 @@ const Home = () => {
                     <img src={pic5} className='rounded lg:rounded-none'/>
                     <img src={pic6} className='rounded lg:rounded-none'/>
                 </div>
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    ...
-                </Swiper>
-            </div>
-            <div className='text-center mt-3 lg:my-12'>
+                <div className='text-center mt-3 lg:my-12'>
                     <h1 className='font-abc text-slate-800 text-2xl lg:text-5xl'>REVIEW ABOUT US</h1>
                     <hr className='lg:w-64 w-28 mx-auto mt-1 lg:mt-4 border-2 lg:border-4 border-amber-400 rounded'/>
+                </div>
+                <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 mt-4">
+                    <Carousel className='w-11/12 mx-auto font-abc lg:text-xl text-center text-xs'>
+                            <div className="flex h-full items-center justify-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400">
+                            <p>"I had an amazing experience at this restaurant! The food was absolutely delicious, and<br />
+                            the service was top-notch. The atmosphere was cozy and welcoming, and I felt right at<br />
+                            home. I highly recommend this place to anyone looking for a fantastic dining experience."<span className='text-amber-400'> - Cristiano Ronaldo</span>
+                            </p>
+                            </div>
+                            <div className="flex h-full items-center justify-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400">
+                            <p>
+                            "I was disappointed with my visit to this restaurant. The food was mediocre at best, and<br />
+                            the service was slow and inattentive. The prices were also quite high for the quality of the<br/>
+                            food. I wouldn't recommend this place to anyone."<span className='text-amber-400'> - Beyoncé</span>
+                            </p>
+                            </div>
+                            <div className="flex h-full items-center justify-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400">
+                            <p>
+                            "I loved the creative and unique dishes at this restaurant. The flavors were bold and<br/>
+                            unexpected, and everything was expertly prepared. The service was friendly and helpful,<br/> 
+                            and the atmosphere was lively and fun. I can't wait to come back and try more!"<span className='text-amber-400'> - Dwayne "The Rock" Johnson</span>
+                            </p>
+                            </div>
+                            <div className="flex h-full items-center justify-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400">
+                            <p>
+                            "This restaurant was a total letdown. The food was bland and uninspired, and the service<br/> 
+                            was rude and dismissive. I felt like I was being rushed out the door as soon as I sat down.<br/>
+                            Save your money and go somewhere else."<span className='text-amber-400'> - Emma Watson</span>
+                            </p>
+                            </div>
+                            <div className="flex h-full items-center justify-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400">
+                            <p>
+                            "I had an overall positive experience at this restaurant. The food was tasty, and the service<br />
+                            was prompt and friendly. However, the noise level was quite high, making it difficult to<br />
+                            have a conversation. I'd recommend this place for a quick bite, but not for a leisurely<br /> 
+                            meal."<span className='text-amber-400'> - Gordon Ramsay</span>
+                            </p>
+                            </div>
+                    </Carousel>
+                </div>
             </div>
+            
         </div>
     );
 };
