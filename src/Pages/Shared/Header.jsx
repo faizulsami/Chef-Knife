@@ -1,6 +1,7 @@
 import { Button, Navbar } from 'flowbite-react';
 import React from 'react';
 import webLogo from '../../images/webLogo.png'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -18,19 +19,12 @@ const Header = () => {
             </Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse>
-                <Navbar.Link
-                    className='lg:text-xl'
-                    to='/'
-                >
+                <Link to='/' className='lg:text-xl'>
                     Home
-                </Navbar.Link>
-                <Navbar.Link
-                    
-                    to="/blog"
-                    className='lg:text-xl'
-                >
+                </Link>
+                <Link className='lg:text-xl'>
                     Blog
-                </Navbar.Link>
+                </Link>
                 <Button gradientDuoTone="pinkToOrange" className='lg:relative lg:bottom-1 lg:text-xl'>
                     Login
                 </Button>

@@ -34,7 +34,7 @@ const Home = () => {
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-3 lg:mt-5 lg:gap-8 gap-6 mt-3 '>
                     {
-                        chefs.map(chef => <Chef key={chefs.id} chef={chef}></Chef>)
+                        chefs.map(chef => <Chef key={chef.id} chef={chef}></Chef>)
                     }
                 </div>
                 <div className='text-center mt-3 lg:my-12'>
@@ -50,7 +50,7 @@ const Home = () => {
                     <img src={pic6} className='rounded lg:rounded-none'/>
                 </div>
                 <div className='text-center mt-3 lg:my-12'>
-                    <h1 className='font-abc text-slate-800 text-2xl lg:text-5xl'>REVIEW ABOUT US</h1>
+                    <h1 className='font-abc text-slate-800 text-2xl lg:text-5xl'>REVIEWS ABOUT US</h1>
                     <hr className='lg:w-64 w-28 mx-auto mt-1 lg:mt-4 border-2 lg:border-4 border-amber-400 rounded'/>
                 </div>
                 <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 mt-4">
