@@ -2,7 +2,6 @@ import { Card } from 'flowbite-react';
 import React, { useState } from 'react';
 import { FaRegStar, FaStar } from "react-icons/Fa";
 import { FcLike } from "react-icons/fc";
-
 import Rating from 'react-rating';
 import { toast } from 'react-toastify';
 
@@ -10,9 +9,8 @@ const Recipe = ({ recipe }) => {
     const { name, img, ingredients, method, rating } = recipe;
     const [active, setActive] = useState(false)
     const HandelLike = () => {
-
         setActive(true)
-        toast("Favorite Successfully add");
+        toast("Successfully Added");
     }
     return (
         <div className="mx-auto">
@@ -47,10 +45,7 @@ const Recipe = ({ recipe }) => {
                     </p>
                 </div>
                 <div className='font-abc'>
-                {/* <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                    Add to favorite
-                </button> */}
-                <button onClick={HandelLike}> 
+                <button onClick={HandelLike} disabled={active}> 
                         {
                         active ? <button class=" cursor-not-allowed">
                         <FcLike className='text-3xl'></FcLike>

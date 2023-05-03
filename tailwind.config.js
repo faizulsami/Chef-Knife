@@ -9,7 +9,7 @@ export default {
     extend: {},
     fontFamily:{
       abc: ["Roboto Slab", "serif"]
-    }
+    },
   },
   plugins: [
     [require('daisyui')],require('flowbite/plugin')

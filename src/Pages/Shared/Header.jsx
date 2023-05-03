@@ -26,7 +26,7 @@ const Header = () => {
                     Blog
                 </Link>
                 <Button gradientDuoTone="pinkToOrange" className='lg:relative lg:bottom-1 lg:text-xl'>
-                    Login
+                    <Link to='/login'>Login</Link>
                 </Button>
             </Navbar.Collapse>
         </Navbar>
