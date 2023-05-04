@@ -8,7 +8,7 @@ const Login = () => {
     const [error,setError] = useState('')
     const [success, setSuccess] = useState('');
     const {user,googlePopup,gitPopup,signIn} = useContext(AuthContext);
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
     const navigate = useNavigate();
     const handleGoogleSignIn = () =>{
         googlePopup()
@@ -16,7 +16,7 @@ const Login = () => {
             const LoggedUser = result.user;
             console.log(LoggedUser);
             setUser(LoggedUser);
-            navigate(from)
+            navigate(from,{replace: true})
         })
         .catch((error) => {
             console.log("error", error.message);
@@ -28,7 +28,7 @@ const Login = () => {
             const LoggedUser = result.user;
             console.log(LoggedUser);
             setUser(LoggedUser);
-            navigate(from)
+            navigate(from,{replace: true})
             })
             .catch(error =>{
                 console.log(error);
@@ -46,7 +46,7 @@ const Login = () => {
             const loggedUser = result.user;
             setSuccess('Login successful');
             setError('');
-            navigate(from)
+            navigate(from,{replace: true})
         })
         .catch(error => {
             setError(error.message)
