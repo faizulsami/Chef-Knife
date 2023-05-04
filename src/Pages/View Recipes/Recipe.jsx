@@ -4,6 +4,7 @@ import { FaRegStar, FaStar } from "react-icons/Fa";
 import { FcLike } from "react-icons/fc";
 import Rating from 'react-rating';
 import { toast } from 'react-toastify';
+import LazyLoad from 'react-lazy-load';
 
 const Recipe = ({ recipe }) => {
     const { name, img, ingredients, method, rating } = recipe;
@@ -18,7 +19,9 @@ const Recipe = ({ recipe }) => {
                 className='font-abc cursor-pointer group-hover:blur-sm hover:!blur-none
                 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400 shadow-2xl'
             >
+            <LazyLoad threshold={1} onContentVisible={() => {console.log('loaded!')}}>
             <img src={img} className='rounded-full'/>
+            </LazyLoad>
             <p className='text-2xl text-amber-400'>{name}</p>
             <div className='grid grid-cols-1 lg:grid-cols-2'>
                 <div>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import ReactToPrint from 'react-to-print';
 
 const Blog = () => {
+    const ref = useRef()
     return (
-        <div className='container mx-auto'>
+        <div ref={ref} className='container mx-auto font-abc'>
             <div className='m-3 py-5'>
                 <h1 className='text-2xl py-2'>
                     Tell us the differences between uncontrolled and controlled components ?
@@ -45,6 +47,7 @@ const Blog = () => {
                     A custom hook in React.js is a JavaScript function that starts with the prefix "use" and uses built-in hooks or other custom hooks to create reusable logic. Custom hooks are used to share logic across components, encapsulate complex logic, and abstract away implementation details. They improve code reusability, simplify complex logic, and improve code organization.
                 </p>
             </div>
+            <ReactToPrint trigger={()=><button className="bg-transparent ms-4  hover:bg-amber-400 text-amber-400 hover:text-slate-100 py-2 px-4 border border-amber-400 hover:border-transparent rounded">Convert To PDF</button>} content={()=>ref.current}/>
         </div>
     );
 };

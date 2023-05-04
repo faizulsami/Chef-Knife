@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { BiLike } from 'react-icons/bi';
 import Recipe from './Recipe';
+import LazyLoad from 'react-lazy-load';
 
 
 const ViewsRecipes = () => {
     const chef = useLoaderData();
     const {bio, chef_picture, num_recipes, years_of_experience, chef_name,likes_num, recipes , id } = chef;
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div className='container mx-auto'>
             <div className="lg:transform lg:transition lg:duration-500 lg:hover:scale-110 shadow-2xl rounded-2xl grid grid-cols-1 lg:grid-cols-2 mx-auto
             bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400 font-abc">
+                <LazyLoad threshold={1} onContentVisible={() => {console.log('loaded!')}}>
                 <img src={chef_picture} className='rounded-t-2xl lg:rounded-tr-none lg:rounded-s-2xl lg:w-10/12 lg:border-e-4 lg:border-amber-400'/>
+                </LazyLoad>
                 <div className='font-abc lg:my-auto ms-3 lg:ms-0'>
                     <p className='lg:text-5xl text-xl text-amber-400'>{chef_name}</p>
                     <p className='lg:text-xl text-xs text-slate-100'>{bio}</p>

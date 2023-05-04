@@ -4,12 +4,11 @@ import { BiLike } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 
-
 const Chef = ({ chef }) => {
     const {id, chef_picture, num_recipes, years_of_experience, chef_name,likes_num } = chef;
     return (
             <Card className='bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400 font-abc transform transition duration-500 hover:scale-110'>
-                <LazyLoad height={500} offset={300}>
+                <LazyLoad threshold={1} onContentVisible={() => {console.log('loaded!')}}>
                 <img src={chef_picture} className='max-w rounded'/>
                 </LazyLoad>
                 <h1 className="lg:text-4xl text-3xl text-amber-400 font-medium">

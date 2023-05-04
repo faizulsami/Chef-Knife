@@ -6,6 +6,7 @@ import ErrorPage from "../Pages/Error/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Blog from "../Pages/Blogs/Blog";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'view_recipes/:id',
-                element:<ViewsRecipes></ViewsRecipes>,
+                element:<PrivateRoute><ViewsRecipes></ViewsRecipes></PrivateRoute>,
                 loader:({params}) => fetch(`https://assignment-10-server-faizulsami.vercel.app/dishes/${params.id}`)
             },
             {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'blog',
-                element:<Blog></Blog>,
+                element:<PrivateRoute><Blog></Blog></PrivateRoute>,
             }
         ]
     }

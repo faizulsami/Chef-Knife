@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import homeChef from '../../images/homeChef.png'
 import { useLoaderData } from 'react-router-dom';
 import Chef from './Chef';
@@ -9,16 +9,22 @@ import pic4 from '../../images/pic4.jpg'
 import pic5 from '../../images/pic5.jpg'
 import pic6 from '../../images/pic6.jpg'
 import { Carousel } from 'flowbite-react';
+import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
     const chefs = useLoaderData();
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div>
             <div className='bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 to-rose-400'>
                 <div className='container mx-auto'>
                     <div className='lg:flex gap-28 justify-center'>
                         <div>
+                        <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                             <img src={homeChef}/>
+                        </LazyLoad>
                         </div>
                         <div className='lg:text-end text-center lg:my-auto font-abc'>
                             <h1 className='lg:text-5xl text-xl lg:mt-0 mt-3 text-amber-400'>We do not cook, we create<br/>your emotions!</h1>
@@ -42,12 +48,25 @@ const Home = () => {
                     <hr className='lg:w-64 w-28 mx-auto mt-1 lg:mt-4 border-2 lg:border-4 border-amber-400 rounded'/>
                 </div>
                 <div className='grid lg:grid-cols-3 grid-cols-1 lg:gap-0 gap-4 mt-3 lg:my-12 lg:w-auto w-80 justify-center align-middle mx-auto'>
+                    <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                     <img src={pic1} className='rounded lg:rounded-none'/>
+                    </LazyLoad>
+                    <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                     <img src={pic2} className='rounded lg:rounded-none'/>
+                    </LazyLoad>
+                    <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                     <img src={pic3} className='rounded lg:rounded-none'/>
+                    </LazyLoad>
+                    <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                     <img src={pic4} className='rounded lg:rounded-none'/>
+                    </LazyLoad>
+                    <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                     <img src={pic5} className='rounded lg:rounded-none'/>
+                    </LazyLoad>
+                    <LazyLoad threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
                     <img src={pic6} className='rounded lg:rounded-none'/>
+                    </LazyLoad>
+                    
                 </div>
                 <div className='text-center mt-3 lg:my-12'>
                     <h1 className='font-abc text-slate-800 text-2xl lg:text-5xl'>REVIEWS ABOUT US</h1>

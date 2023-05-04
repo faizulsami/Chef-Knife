@@ -13,6 +13,7 @@
     "@react-icons/all-files": "^4.1.0",
     "@react-spring/web": "^9.7.2",
     "daisyui": "^2.51.6",
+    "firebase": "^9.21.0",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.4",
     "localforage": "^1.10.0",
@@ -23,7 +24,9 @@
     "react-lazy-load": "^4.0.1",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.11.0",
+    "react-to-print": "^2.14.12",
     "react-toastify": "^9.1.2",
+    "react-tooltip": "^5.11.2",
     "sort-by": "^1.2.0",
     "swiper": "^9.2.4"
   },
