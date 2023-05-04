@@ -8,7 +8,7 @@ const Header = () => {
         <Navbar
             fluid={true}
             rounded={true}
-            className='p-0 container mx-auto'
+            className='p-0 container mx-auto font-abc'
         >
             <Navbar.Brand
             >
@@ -22,7 +22,7 @@ const Header = () => {
                 <Link to='/' className='lg:text-xl'>
                     Home
                 </Link>
-                <Link className='lg:text-xl'>
+                <Link to='/blog' className='lg:text-xl'>
                     Blog
                 </Link>
                 <Button gradientDuoTone="pinkToOrange" className='lg:relative lg:bottom-1 lg:text-xl'>

@@ -1,5 +1,6 @@
 import React from 'react';
 import loginImg from '../../images/login.png'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -18,9 +19,9 @@ const Login = () => {
                                 <label for="password" className="text-sm font-medium block mb-2 text-amber-400">Your password</label>
                                 <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
                             </div>
-                            <button className="w-full bg-transparent hover:bg-amber-400 text-slate-100 hover:text-slate-100 py-2 px-4 border border-amber-400 hover:border-transparent rounded">Login to your account</button>
+                            <button className="w-full bg-transparent hover:bg-amber-400 text-slate-100 hover:text-slate-100 py-2 px-4 border border-amber-400 hover:border-transparent rounded">Login</button>
                             <div className="text-sm font-medium dark:text-gray-300 text-amber-400">
-                                Not registered? <a href="#" className="text-stone-100 hover:underline dark:text-blue-500">Register</a>
+                                Not registered? <Link className='text-white' to='/register'>Register</Link>
                             </div>
                         </form>
                     </div>
