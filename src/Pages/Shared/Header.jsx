@@ -3,8 +3,8 @@ import React, { useContext, useState } from 'react';
 import webLogo from '../../images/webLogo.png'
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
-import profilePic from '../../images/profilepic.png'
 import { AuthContext } from '../../Provider/AuthProvider';
+import 'react-tooltip/dist/react-tooltip.css';
 const Header = () => {
     const {user,logOut} = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false)

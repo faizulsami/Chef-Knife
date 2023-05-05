@@ -1,21 +1,22 @@
 import React, { useContext, useState } from 'react';
 import loginImg from '../../images/login.png'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
     const [error,setError] = useState('')
     const [success, setSuccess] = useState('');
-    const {user,googlePopup,gitPopup,signIn} = useContext(AuthContext);
+    const {googlePopup,gitPopup,signIn} = useContext(AuthContext);
+    const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    console.log(location.state);
     const navigate = useNavigate();
     const handleGoogleSignIn = () =>{
         googlePopup()
         .then((result) => {
             const LoggedUser = result.user;
             console.log(LoggedUser);
-            setUser(LoggedUser);
             navigate(from,{replace: true})
         })
         .catch((error) => {
@@ -27,7 +28,6 @@ const Login = () => {
         .then(result => {
             const LoggedUser = result.user;
             console.log(LoggedUser);
-            setUser(LoggedUser);
             navigate(from,{replace: true})
             })
             .catch(error =>{
